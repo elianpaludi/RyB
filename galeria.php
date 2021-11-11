@@ -1,13 +1,19 @@
 <?php
   include("./backend/conexion.php");
-//Check connection
-//Check connection
-if($db->connect_error){
-    die("Connection failed: " . $db->connect_error);
- }
- 
- //Get image data from database
- $result = $db->query("SELECT image FROM images WHERE id = ['id']");
+
+    $sql = "SELECT * FROM galeria";
+    $result = mysqli_query($db, $sql);
+
+    // print_r($result);
+    // $data = fetch_assoc($result);
+
+    if(!$result){
+        echo "Error al ejecutar la consulta";
+    }
+
+    if(mysqli_num_rows($result) == 0){
+        echo "No hay registros";
+    }
 
 
 
@@ -22,6 +28,8 @@ if($db->connect_error){
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="./styles/galeria/styleGaleria.css">
+    <link rel="stylesheet" href="./styles/global.css">
+    <link rel="icon" href="img/logoChico.png" type="image/x-icon">
     <title>R&D Constructora</title>
 </head>
 <body>
@@ -33,6 +41,7 @@ if($db->connect_error){
                 <li><i class="fas fa-home"></i><a href="index.php">Inicio</a></li>
                 <li><i class="fas fa-images"></i><a href="galeria.php">Galeria</a></li>
                 <li><i class="fas fa-briefcase"></i></i><a href="nosotros.php">Sobre nosotros</a></li>
+                <li><i class="fas fa-wrench"></i></i></i><a href="ubicacion.php">Donde encontrarnos</a></li>
             </ul>
 
             <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
@@ -46,6 +55,9 @@ if($db->connect_error){
                     <div class="carousel-item">
                         <div class="imgThree"></div>
                     </div>
+                    <div class="carousel-item">
+                        <div class="imgFour"></div>
+                    </div>
                 </div>
             </div>
         </nav>
@@ -57,10 +69,14 @@ if($db->connect_error){
     
     
     <section class="galeria">
-        <div class="container-img">
-            <img src="./img/carrousel1.jpg" alt="">
-            <h5>Titulo de la imagen</h5>
-        </div>
+        <?php
+            while($fila = mysqli_fetch_assoc($result)){
+                echo "<div class='img-container'>";
+                echo "<img  class='imagen' src='data:image/jpg;base64,".base64_encode($fila['image'])."' alt='".$fila['titulo']."'>";
+                echo "<h5>".$fila['id'] .$fila['titulo']."</h5>";
+                echo "</div>";
+            }
+        ?>
     </section>
 </main>
 

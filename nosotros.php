@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="./styles/nosotros/nosotros.css">
+    <link rel="stylesheet" href="./styles/global.css">
+    <link rel="icon" href="img/logoChico.png" type="image/x-icon">
     <title>R&D Constructora</title>
     <title>Document</title>
 </head>
@@ -19,6 +21,8 @@
                 <li><i class="fas fa-home"></i><a href="index.php">Inicio</a></li>
                 <li><i class="fas fa-images"></i><a href="galeria.php">Galeria</a></li>
                 <li><i class="fas fa-briefcase"></i></i><a href="nosotros.php">Sobre nosotros</a></li>
+                <li><i class="fas fa-wrench"></i></i></i><a href="ubicacion.php">Donde encontrarnos</a></li>
+           
             </ul>
             
             <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
@@ -31,6 +35,9 @@
                     </div>
                     <div class="carousel-item">
                         <div class="imgThree"></div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="imgFour"></div>
                     </div>
                 </div>
             </div>
@@ -70,23 +77,23 @@
     <aside class="valores">
 
         <div class="card-valores">
-       
+        <img src="./img/valores/1.png" alt="" width=124px>
         <p>Espiritu de servir</p>
         </div>
         <div class="card-valores">
-  
+        <img src="./img/valores/2.png" alt="" width=124px>
         <p>Calidad</p>
         </div>
         <div class="card-valores">
-       
+        <img src="./img/valores/3.png" alt="" width=124px>
         <p>Responsabilidad</p>
         </div>
         <div class="card-valores">
-    
+        <img src="./img/valores/4.png" alt="" width=124px>
         <p>Postura de humildad y sencillez</p>
         </div>
         <div class="card-valores">
-       
+        <img src="./img/valores/5.png" alt="" width=124px>
         <p>Ética</p>
         </div>
 
